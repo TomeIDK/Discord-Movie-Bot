@@ -1,4 +1,4 @@
 # ignore config.json file
 config.json
-./data/
 node_modules
+data/movies.json
