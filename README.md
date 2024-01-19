@@ -9,4 +9,7 @@
  ### /addmovie <movie>
  Add a movie to the list
 
+  ### /delmovie <movie>
+ Remove a movie from the list (case sensitive)
+
  
