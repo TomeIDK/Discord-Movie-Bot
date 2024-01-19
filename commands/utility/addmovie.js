@@ -1,6 +1,5 @@
 const { SlashCommandBuilder } = require("discord.js");
 const fs = require("node:fs");
-let jsonData = require("../../data/movies.json");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -14,9 +13,10 @@ module.exports = {
         .setRequired(true)
     ),
   async execute(interaction) {
+    let jsonData = require("../../data/movies.json");
     const target =
       interaction.options.getString("movie") ?? "No movie provided";
-      console.log("1. " + jsonData);
+    console.log("1. " + jsonData);
     console.log("2. " + jsonData.movieList);
     jsonData.movieList.push(target);
     jsonData = JSON.stringify(jsonData);
@@ -24,6 +24,6 @@ module.exports = {
       if (error) console.error(error);
       if (!error) console.log(`Added ${target} to the list`);
     });
-    await interaction.reply(`Added ${target} to the movie list. `);
+    await interaction.reply(`Added ${target} to the movie list.`);
   },
 };
