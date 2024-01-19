@@ -1,4 +1,4 @@
 # ignore config.json file
 config.json
-data
+./data/
 node_modules
